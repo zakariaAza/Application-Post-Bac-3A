@@ -1,16 +1,17 @@
-package com.example.application3a;
+package com.example.application3a.view;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.TextView;
-import android.widget.VideoView;
 
+import com.example.application3a.R;
+import com.example.application3a.model.Schools;
+import com.google.android.gms.maps.MapView;
 import com.google.gson.Gson;
 
 public class DisplaySchoolActivity extends AppCompatActivity {
+
+    private TextView schoolName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +20,12 @@ public class DisplaySchoolActivity extends AppCompatActivity {
 
         Gson gson = new Gson();
         String strObj = getIntent().getStringExtra("obj");
-        Players obj = gson.fromJson(strObj, Players.class);
+        Schools obj = gson.fromJson(strObj, Schools.class);
 
         TextView schoolName = findViewById(R.id.textNameSchool);
         schoolName.setBackgroundColor(0xff0000ff);
 
-        schoolName.setText(obj.getUser());
+        schoolName.setText(obj.getName());
         schoolName.setTextColor(0xff000000);
 
 
@@ -41,6 +42,9 @@ public class DisplaySchoolActivity extends AppCompatActivity {
 
         TextView domaine = findViewById(R.id.textDomaines);
         domaine.setText("Domaine : " + obj.getDomainsList().get(0));
+
+        //MapView mapView = findViewById(R.id.mapView);
+
     }
 
 

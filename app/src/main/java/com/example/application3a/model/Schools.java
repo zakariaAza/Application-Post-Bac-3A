@@ -1,10 +1,10 @@
-package com.example.application3a;
+package com.example.application3a.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Players {
+public class Schools {
 
 //Give the field a custom name//
 
@@ -19,7 +19,7 @@ public class Players {
     @SerializedName("domains")
     private List<String> domainsList;
 
-    public Players(String name, String country, List<String> urlList, List<String> domainsList) {
+    public Schools(String name, String country, List<String> urlList, List<String> domainsList) {
         this.name = name;
         this.country = country;
         this.urlList = urlList;
@@ -30,7 +30,7 @@ public class Players {
 
 //Retrieve the data using setter/getter methods//
 
-    public String getUser() {
+    public String getName() {
         return name;
     }
 

@@ -1,10 +1,13 @@
-package com.example.application3a;
+package com.example.application3a.model;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
+
+import com.example.application3a.controller.OnItemClickListener;
+import com.example.application3a.R;
 
 import java.util.List;
 
@@ -13,10 +16,10 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> {
 
-    private List<Players> dataList;
+    private List<Schools> dataList;
     private final OnItemClickListener listener;
 
-    public MyAdapter(List<Players> dataList, OnItemClickListener listener) {
+    public MyAdapter(List<Schools> dataList, OnItemClickListener listener) {
 
         this.dataList = dataList;
         this.listener=listener;
@@ -52,8 +55,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
-        final Players user = dataList.get(position);
-        holder.textUser.setText(user.getUser());
+        final Schools user = dataList.get(position);
+        holder.textUser.setText(user.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 listener.onItemClick(user);

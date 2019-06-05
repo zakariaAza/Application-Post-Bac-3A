@@ -1,4 +1,4 @@
-package com.example.application3a;
+package com.example.application3a.controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
+import com.example.application3a.model.MyAdapter;
+import com.example.application3a.R;
+import com.example.application3a.model.GetData;
+import com.example.application3a.model.RetrofitClient;
+import com.example.application3a.model.Schools;
+import com.example.application3a.view.DisplaySchoolActivity;
 import com.google.gson.Gson;
 
 import retrofit2.Call;
@@ -29,17 +35,17 @@ public class MainActivity extends AppCompatActivity {
 
         GetData service = RetrofitClient.getRetrofitInstance().create(GetData.class);
 
-        Call<List<Players>> call = service.getAllUsers();
+        Call<List<Schools>> call = service.getAllUsers();
 
 //Execute the request asynchronously//
 
-        call.enqueue(new Callback<List<Players>>() {
+        call.enqueue(new Callback<List<Schools>>() {
 
             @Override
 
 //Handle a successful response//
 
-            public void onResponse(Call<List<Players>> call, Response<List<Players>> response) {
+            public void onResponse(Call<List<Schools>> call, Response<List<Schools>> response) {
                 loadDataList(response.body());
             }
 
@@ -47,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
 //Handle execution failures//
 
-            public void onFailure(Call<List<Players>> call, Throwable throwable) {
+            public void onFailure(Call<List<Schools>> call, Throwable throwable) {
 
 //If the request fails, then display the following toast//
 
@@ -58,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
 //Display the retrieved data as a list//
 
-    private void loadDataList(List<Players> usersList) {
+    private void loadDataList(List<Schools> usersList) {
 
 //Get a reference to the RecyclerView//
 
@@ -78,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     private OnItemClickListener getListener() {
         return new OnItemClickListener() {
             @Override
-            public void onItemClick(Players player) {
+            public void onItemClick(Schools player) {
 
                 Gson gson = new Gson();
                 Intent myIntent = new Intent(MainActivity.this, DisplaySchoolActivity.class);
