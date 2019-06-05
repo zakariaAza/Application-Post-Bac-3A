@@ -2,6 +2,8 @@ package com.example.application3a.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import com.example.application3a.R;
@@ -43,7 +45,11 @@ public class DisplaySchoolActivity extends AppCompatActivity {
         TextView domaine = findViewById(R.id.textDomaines);
         domaine.setText("Domaine : " + obj.getDomainsList().get(0));
 
-        //MapView mapView = findViewById(R.id.mapView);
+        WebView webView = findViewById(R.id.webView);
+        webView.setWebViewClient(new WebViewClient());
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.loadUrl(obj.getURLList().get(0));
 
     }
 
