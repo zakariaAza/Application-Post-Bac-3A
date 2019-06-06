@@ -42,6 +42,6 @@
 <li>Location de l'école fournie par l'API </li>
 <li>Affichage de la page principale du site web de l'école </li>
 </ul>
-<img src="Screenshot_20190606-013709_application3A.jpg" alt="splash">
+<img width="200" alt="portfolio_view" img src="Screenshot_20190606-013709_application3A.jpg" alt="splash">
 </article>
       </div>
