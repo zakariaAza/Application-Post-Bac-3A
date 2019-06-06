@@ -22,7 +22,7 @@
 <li>Sauvegarde en cache ( Internal Storage )</li>
 <li>Fonctions supplémentaires :
 <ul>
-<li>Animation entre écrans</li>
+<li>Slide Animation très esthètique entre les écrans</li>
 <li>Utilisation d'une interface</li>
 <li>Utilisation du design pattern retrofit</li>
 <li>Utilisation d'une Web View pour afficher le site web de chaque école</li>
