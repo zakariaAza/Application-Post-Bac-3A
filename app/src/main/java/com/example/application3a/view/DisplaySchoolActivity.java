@@ -31,11 +31,6 @@ public class DisplaySchoolActivity extends AppCompatActivity {
         schoolName.setTextColor(0xff000000);
 
 
-        //WebView webView = findViewById(R.id.webView);
-        //webView.setWebViewClient(new WebViewClient());
-        //webView.loadUrl("https://fr.wikipedia.org/w/index.php?search="+obj.getUser());
-
-
         TextView pays = findViewById(R.id.textPays);
         pays.setText("Location : " +obj.getCountry());
 
@@ -52,8 +47,5 @@ public class DisplaySchoolActivity extends AppCompatActivity {
         webView.loadUrl(obj.getURLList().get(0));
 
     }
-
-
-
 
 }

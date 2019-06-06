@@ -19,6 +19,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -84,14 +86,25 @@ public class MainActivity extends AppCompatActivity {
     private OnItemClickListener getListener() {
         return new OnItemClickListener() {
             @Override
-            public void onItemClick(Schools player) {
+            public void onItemClick(Schools school) throws IOException {
 
                 Gson gson = new Gson();
                 Intent myIntent = new Intent(MainActivity.this, DisplaySchoolActivity.class);
-                myIntent.putExtra("obj", gson.toJson(player)); //Optional parameters
+                saveInterne(gson.toJson(school));
+                myIntent.putExtra("obj", gson.toJson(school)); //Optional parameters
                 startActivity(myIntent);
             }
         };
     }
+
+    private void saveInterne(String gsonObject) throws IOException {
+
+        FileOutputStream outputStream= openFileOutput("save_here",MODE_PRIVATE);
+        String objectToSave = gsonObject.toString();
+        outputStream.write(objectToSave.getBytes());
+        outputStream.close();
+
+    }
+
 
 }

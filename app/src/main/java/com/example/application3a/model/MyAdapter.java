@@ -9,7 +9,11 @@ import android.widget.TextView;
 import com.example.application3a.controller.OnItemClickListener;
 import com.example.application3a.R;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 //Extend the RecyclerView.Adapter class//
 
@@ -59,10 +63,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
         holder.textUser.setText(user.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                listener.onItemClick(user);
+                try {
+                    listener.onItemClick(user);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
+
 
 //Calculate the item count for the RecylerView//
 
