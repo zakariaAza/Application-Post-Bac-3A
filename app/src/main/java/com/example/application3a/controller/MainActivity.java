@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
 //Create a handler for the RetrofitInstance interface//
 
         GetData service = RetrofitClient.getRetrofitInstance().create(GetData.class);
@@ -118,7 +119,5 @@ public class MainActivity extends AppCompatActivity {
 
         return value ;
     }
-
-
 
 }

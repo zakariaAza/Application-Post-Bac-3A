@@ -24,18 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
     private List<Schools> dataList;
     private final OnItemClickListener listener;
 
-    private String getFromInterne() throws IOException {
-        String value = null;
 
-        FileInputStream inputStream=openFileInput("save_here");
-        StringBuilder stringb= new StringBuilder();
-        int content;
-        while ((content=inputStream.read())!=-1){
-            value = String.valueOf(stringb.append((char)content));
-        }
-
-        return value ;
-    }
 
     public MyAdapter(List<Schools> dataList, OnItemClickListener listener) {
 
@@ -73,6 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
+
         final Schools user = dataList.get(position);
         holder.textUser.setText(user.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
