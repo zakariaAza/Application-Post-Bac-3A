@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.example.application3a.controller.OnItemClickListener;
 import com.example.application3a.R;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -22,6 +23,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
 
     private List<Schools> dataList;
     private final OnItemClickListener listener;
+
+    private String getFromInterne() throws IOException {
+        String value = null;
+
+        FileInputStream inputStream=openFileInput("save_here");
+        StringBuilder stringb= new StringBuilder();
+        int content;
+        while ((content=inputStream.read())!=-1){
+            value = String.valueOf(stringb.append((char)content));
+        }
+
+        return value ;
+    }
 
     public MyAdapter(List<Schools> dataList, OnItemClickListener listener) {
 

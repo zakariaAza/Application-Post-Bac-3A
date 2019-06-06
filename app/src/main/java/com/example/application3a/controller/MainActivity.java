@@ -19,6 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 Intent myIntent = new Intent(MainActivity.this, DisplaySchoolActivity.class);
                 saveInterne(gson.toJson(school));
-                myIntent.putExtra("obj", gson.toJson(school)); //Optional parameters
+                myIntent.putExtra("obj", getFromInterne()); //Optional parameters
                 startActivity(myIntent);
             }
         };
@@ -105,6 +106,19 @@ public class MainActivity extends AppCompatActivity {
         outputStream.close();
 
     }
+    private String getFromInterne() throws IOException {
+        String value = null;
+
+        FileInputStream inputStream=openFileInput("save_here");
+        StringBuilder stringb= new StringBuilder();
+        int content;
+        while ((content=inputStream.read())!=-1){
+            value = String.valueOf(stringb.append((char)content));
+        }
+
+        return value ;
+    }
+
 
 
 }
