@@ -40,6 +40,7 @@
 <li>Nom de l'école</li>
 <li>Site web à visiter pour plus d'informations</li>
 <li>Location de l'école fournie par l'API </li>
+<li>Dommaine de l'école </li>
 <li>Affichage de la page principale du site web de l'école </li>
 </ul>
 <img width="350" alt="portfolio_view" img src="Screenshot_20190606-013709_application3A.jpg" alt="splash">
