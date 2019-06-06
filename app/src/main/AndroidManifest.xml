@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/slide_out" />
+            android:resource="@anim/slide_out" />
 
         <activity android:name=".view.DisplaySchoolActivity" />
         <activity android:name=".controller.MainActivity">
