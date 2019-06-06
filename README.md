@@ -34,10 +34,13 @@
 </ul>
 <img src="Screenshot_20190606-012840_application3A.jpg" alt="splash">
 
+### Ecran du détail de l'école :
+<li>Affichage des informations suivantes :</li>
 <ul>
 <li>Nom de l'école</li>
 <li>Site web à visiter pour plus d'informations</li>
-<li>Location de l'école fournie par l'API :
+<li>Location de l'école fournie par l'API </li>
+<li>Affichage de la page principale du site web de l'école </li>
 </ul>
 <img src="Screenshot_20190606-013709_application3A.jpg" alt="splash">
 </article>
