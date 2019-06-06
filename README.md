@@ -19,6 +19,7 @@
 <li>Affichage d'une liste dans un RecyclerView</li>
 <li>Affichage du détail d'un item de la liste</li>
 <li>Gitflow propre</li>
+<li>Sauvegarde en cache ( Internal Storage )</li>
 <li>Fonctions supplémentaires :
 <ul>
 <li>Utilisation d'une Web View pour afficher le site web de chaque école</li>
